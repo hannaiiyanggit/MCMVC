@@ -309,7 +309,7 @@ class MCMVC():
                 dualprediction_loss = (pre1 + pre2)
 
                 # Cluster-level Contrastive Loss
-                cl_loss = torch.tensor(0.0)#cluster_contrastive_Loss(z_1, z_2, config['training']['alpha'])
+                cl_loss = cluster_contrastive_Loss(z_1, z_2, config['training']['alpha'])
 
                 # Instance-level Contrastive Loss
                 ins_loss = eval(config['instance_loss'])(z_1, z_2, device)
